@@ -1,17 +1,16 @@
 import "./App.css";
-import { useSelector, useDispatch } from "react-redux";
-import { load, reset } from "./store/users/usersActions";
+import { useSelector } from "react-redux";
+import usersActions from "./store/users/usersActions";
 function App() {
   const users = useSelector((state) => state.users);
-  const dispatch = useDispatch();
 
   return (
     <div className="app">
       <div className="btn-container">
-        <button className="btn" onClick={() => dispatch(load())}>
+        <button className="btn" onClick={() => usersActions.load()}>
           Load Users
         </button>
-        <button className="btn" onClick={() => dispatch(reset())}>
+        <button className="btn" onClick={() => usersActions.reset()}>
           Reset
         </button>
       </div>
